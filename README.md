@@ -26,9 +26,7 @@ O sistema fará um scan da credencial do participante para permitir a entrada no
 ### Requisitos Não-funcionais
 - [ ] O check-in no evento será realizado através de um QRCode;
 
-
-
 ## Tecnologias Utilizadas
    <a href="https://www.prisma.io"> 
-        <img src="https://skillicons.dev/icons?i=prisma" />
+        <img src="https://skillicons.dev/icons?i=prisma,sqlite" />
     </a>
