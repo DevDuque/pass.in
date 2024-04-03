@@ -1,3 +1,7 @@
+/*
+    File to handle the creation of events (POST) using zod to handle the autentication of the RequestBody
+ */
+
 // Dependencies
 import { FastifyInstance } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';

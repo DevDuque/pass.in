@@ -6,8 +6,6 @@ import { createEvent } from './routes/create-event';
 // Initializing Fastify app
 const app = fastify();
 
-24:44
-
 // Setting up schema validator and serializer
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
