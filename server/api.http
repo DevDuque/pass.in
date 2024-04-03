@@ -6,3 +6,22 @@ Content-Type: application/json
     "details": "A event that come first in the database",
     "maximumAttendees": 1
 }
+
+
+###
+
+POST http://localhost:3333/events/ID?/attendees
+Content-Type: application/json
+
+{
+    "name": "Duque",
+    "email": "devgduque@gmail.com",
+}
+
+### 
+
+GET http://localhost:3333/events/5ddd04c1-a321-4587-9c01-d7ce09da12b8
+
+###
+
+GET http://localhost:3333/attendees/1/badge

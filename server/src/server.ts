@@ -2,6 +2,9 @@
 import fastify from 'fastify';
 import { serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod';
 import { createEvent } from './routes/create-event';
+import { registerForEvent } from './routes/register-for-event';
+import { getEvent } from './routes/get-event';
+import { getAttendeeBadge } from './routes/get-attendee-badge';
 
 // Initializing Fastify app
 const app = fastify();
@@ -10,8 +13,12 @@ const app = fastify();
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-// Registering route handler for creating events
+// Registering routes handler
 app.register(createEvent);
+app.register(registerForEvent);
+
+app.register(getEvent);
+app.register(getAttendeeBadge);
 
 app.listen({
     port: 3333

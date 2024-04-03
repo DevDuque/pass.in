@@ -66,6 +66,6 @@ export async function createEvent(app: FastifyInstance) {
         });
 
         // Returning 201 (Created) if successful
-        return reply.status(201).send();
+        return reply.status(201).send({eventId: createdEvent.id});
     });
-}
+};
