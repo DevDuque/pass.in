@@ -10,26 +10,26 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3333/events/ID?/attendees
+POST http://localhost:3333/events/6e5063ac-abd2-482f-bda4-c6743aad2b37/attendees
 Content-Type: application/json
 
 {
     "name": "Duque",
-    "email": "devgduque@gmail.com",
+    "email": "devgduque@gmail.com"
 }
 
 ### 
 
-GET http://localhost:3333/events/5ddd04c1-a321-4587-9c01-d7ce09da12b8
+GET http://localhost:3333/events/6e5063ac-abd2-482f-bda4-c6743aad2b37
 
 ###
 
-GET http://localhost:3333/attendees/1/badge
+GET http://localhost:3333/attendees/4/badge
 
 ###
 
-GET http://localhost:3333/attendees/1/check-in
+GET http://localhost:3333/attendees/4/check-in
 
 ### 
 
-GET http://localhost:3333/events/5ddd04c1-a321-4587-9c01-d7ce09da12b8/attendees?query=duque
+GET http://localhost:3333/events/6e5063ac-abd2-482f-bda4-c6743aad2b37/attendees?query=duque

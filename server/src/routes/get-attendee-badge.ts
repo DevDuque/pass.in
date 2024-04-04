@@ -10,12 +10,15 @@ import { z } from 'zod';
 
 // MyUtils
 import { prisma } from "../lib/prisma";
+import { BadRequest } from "./_errors/bad-request";
 
 export async function getAttendeeBadge(app: FastifyInstance) {
     app
     .withTypeProvider<ZodTypeProvider>()
     .get('/attendees/:attendeeId/badge', {
         schema: {
+            summary: "Return an attendee badge",
+            tags: ["attendees"],
             params: z.object({
                 attendeeId: z.coerce.number().int(),
             }),
@@ -52,7 +55,7 @@ export async function getAttendeeBadge(app: FastifyInstance) {
 
         // Throwing an error if an attendee is not in database
         if (attendee == null) {
-            throw new Error('Attention! Attendee not found.');
+            throw new BadRequest('Attention! Attendee not found.');
         };
 
         // Creating URL for checkIn
