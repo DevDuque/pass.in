@@ -1,7 +1,14 @@
+/*
+    File to handle the return of attendee (POST) using zod to handle the autentication of the QueryParams
+ */
+
+// Dependecies
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 
 import { z } from 'zod';
+
+// MyUtils
 import { prisma } from "../lib/prisma";
 
 export async function getAttendeeBadge(app: FastifyInstance) {
@@ -13,7 +20,14 @@ export async function getAttendeeBadge(app: FastifyInstance) {
                 attendeeId: z.coerce.number().int(),
             }),
             response: {
-               
+               200: z.object({
+                    badge: z.object({
+                        name: z.string(),
+                        email: z.string().email(),
+                        eventTitle: z.string(),
+                        checkInURL: z.string().url()
+                    })
+               })
             },
         }
     }, async (request, reply) => {
@@ -35,10 +49,24 @@ export async function getAttendeeBadge(app: FastifyInstance) {
            }
         });
 
+
+        // Throwing an error if an attendee is not in database
         if (attendee == null) {
-            throw new Error('Attendee not found.');
+            throw new Error('Attention! Attendee not found.');
         };
 
-        return reply.send({ attendee });
+        // Creating URL for checkIn
+        const baseURL = `${request.protocol}://${request.hostname}`
+        const checkInURL = new URL(`/attendees/${attendeeId}/check-in`, baseURL)
+
+        // Formatting the return
+        return reply.send({ 
+            badge: {
+                name: attendee.name,
+                email: attendee.email,
+                eventTitle: attendee.event.title,
+                checkInURL: checkInURL.toString()
+            }
+         });
     });
 };

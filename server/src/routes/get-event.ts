@@ -1,7 +1,14 @@
+/*
+    File to handle the return of events (POST) using zod to handle the autentication of the QueryParams
+ */
+
+// Dependecies
 import { FastifyInstance } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 
 import { z } from 'zod';
+
+// MyUtils
 import { prisma } from '../lib/prisma';
 
 export async function getEvent(app: FastifyInstance) {
@@ -26,7 +33,7 @@ export async function getEvent(app: FastifyInstance) {
             },
         }
     }, async (request, reply) => {
-        const { eventId} = request.params;
+        const { eventId } = request.params;
 
         const event = await prisma.event.findUnique({
             select: {
@@ -50,6 +57,7 @@ export async function getEvent(app: FastifyInstance) {
             return reply.status(404).send("Event not found");
         }
 
+        // Formatting the return
         return reply.send({ event:
             {
                 id: event.id,

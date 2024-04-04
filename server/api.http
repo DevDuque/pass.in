@@ -25,3 +25,11 @@ GET http://localhost:3333/events/5ddd04c1-a321-4587-9c01-d7ce09da12b8
 ###
 
 GET http://localhost:3333/attendees/1/badge
+
+###
+
+GET http://localhost:3333/attendees/1/check-in
+
+### 
+
+GET http://localhost:3333/events/5ddd04c1-a321-4587-9c01-d7ce09da12b8/attendees?query=duque

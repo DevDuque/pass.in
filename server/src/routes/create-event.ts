@@ -8,9 +8,9 @@ import { ZodTypeProvider } from 'fastify-type-provider-zod';
 
 import { z } from 'zod';
 
-import { prisma } from '../lib/prisma';
 
 // MyUtils
+import { prisma } from '../lib/prisma';
 import { generateSlug } from '../utils/generate_slug';
 
 export async function createEvent(app: FastifyInstance) {
@@ -52,7 +52,7 @@ export async function createEvent(app: FastifyInstance) {
 
         // Throwing an error if an event with the same slug already exists
         if (eventWithSameSlug !== null) {
-            throw new Error("Another event with the same title already exists");
+            throw new Error("Attention! Another event with the same title already exists");
         };
 
         // Creating a new event in the database using Prisma
