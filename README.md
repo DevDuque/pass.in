@@ -1,32 +1,43 @@
 # pass.in
-O pass.in é uma aplicação de gestão de participantes em eventos presenciais.
+A NodeJS application designed to simplify the management of participants in in-person events. With Pass.in, event organizers can easily create and manage events, allowing participants to register online and issue credentials for quick and secure access on the day of the event.
 
-A ferramenta permite que o organizador cadastre um evento e abra uma página pública de inscrição.
+<p align="center">
 
-Os participantes inscritos podem emitir uma credencial para check-in no dia do evento.
+![alt text](public/PassIn_Node.png)
 
-O sistema fará um scan da credencial do participante para permitir a entrada no evento.
+</p>
 
-## Requisitos
+# Requirements
 
-### Requisitos Funcionais
+## Functional Requirements
 
-- [ ] O organizador deve poder cadastrar um novo evento;
-- [ ] O organizador deve poder visualizar dados de um evento;
-- [ ] O organizador deve poser visualizar a lista de participantes;
-- [ ] O participante deve poder se inscrever em um evento;
-- [ ] O participante deve poder visualizar seu crachá de inscrição;
-- [ ] O participante deve poder realizar check-in no evento;
+- [ ] The organizer must be able to register a new event.
+- [ ] The organizer must be able to view event details.
+- [ ] The organizer must be able to view the list of participants.
+- [ ] The participant must be able to register for an event.
+- [ ] The participant must be able to view their registration badge.
+- [ ] The participant must be able to check-in at the event.
 
-### Regras de Negócio
-- [ ] O participante só pode se inscrever em um evento uma única vez;
-- [ ] O participante só pode se inscrever em eventos com vagas disponíveis;
-- [ ] O participante só pode realizar check-in em um evento uma única vez;
+## Business Rules
+- [ ] The participant can only register for an event once.
+- [ ] The participant can only register for events with available spots.
+- [ ] The participant can only check-in at an event once.
 
-### Requisitos Não-funcionais
-- [ ] O check-in no evento será realizado através de um QRCode;
+## Non-functional Requirements
+- [ ] Event check-in will be performed using a QRCode.
 
-## Tecnologias Utilizadas
-   <a href="https://www.prisma.io"> 
-        <img src="https://skillicons.dev/icons?i=prisma,sqlite" />
+# Technologies Used
+<p style="display: flex; align-items: center; justify-content: center; gap: 20px"> 
+    <a href="https://www.prisma.io"> 
+        <img src="https://skillicons.dev/icons?i=prisma" width="80" />
     </a>
+    <a href="https://www.sqlite.org">
+        <img src="https://skillicons.dev/icons?i=sqlite" width="80" />
+    </a>
+    <a href="https://www.typescriptlang.org">
+        <img src="https://skillicons.dev/icons?i=ts" width="80" />
+    </a>
+    <a href="https://nodejs.org/en">
+        <img src="https://skillicons.dev/icons?i=nodejs" width="80" />
+    </a>
+</p>
