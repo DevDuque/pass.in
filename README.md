@@ -27,7 +27,7 @@ A NodeJS application designed to simplify the management of participants in in-p
 - [ ] Event check-in will be performed using a QRCode.
 
 # Technologies Used
-<p style="display: flex; align-items: center; justify-content: center; gap: 20px"> 
+<p align="center"> 
     <a href="https://www.prisma.io"> 
         <img src="https://skillicons.dev/icons?i=prisma" width="80" />
     </a>
